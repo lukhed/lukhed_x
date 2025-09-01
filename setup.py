@@ -19,5 +19,6 @@ setup(
     ],
     install_requires=[
         "lukhed-basic-utils>=1.6.4",
+        "tweepy>=4.16.0",
     ],
 )
