@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name="lukhed_x",
-    version="0.1.1",
+    version="0.1.2",
     description="Custom tweepy wrapper for posting on X. Used by @grindSunday and @popPunkpoets Bots",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
