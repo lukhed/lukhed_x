@@ -13,7 +13,7 @@ Used by @grindSunday and @popPunkPoets bots.
 ## Installation
 
 ```bash
-pip install lukhed_x
+pip install lukhed-x
 ```
 
 ## Quick Start
