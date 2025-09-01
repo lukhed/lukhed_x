@@ -2,8 +2,6 @@ from typing import Optional
 from lukhed_basic_utils.githubCommon import KeyManager
 from lukhed_basic_utils import osCommon as osC
 import tweepy
-import time
-import re
 
 # https://docs.tweepy.org/en/v3.10.0/api.html
 # https://developer.twitter.com/en/docs/twitter-api/v1/rate-limits
@@ -37,6 +35,7 @@ class X():
         self.current_handle = handle
         self._parse_handle()
         self._key_data = {}
+        self._project_name = 'xapi' # used for key management, should be unique to repo and lowercase.
         self.current_version = 2
 
         # Objects used
@@ -79,13 +78,13 @@ class X():
         self._key_data[self.current_handle]['apiSecret'] = api_secret
 
         print("\n\nThe X portion is complete! Now setting up key management with lukhed library...")
-        self._kM = KeyManager('xApi', config_file_preference=self.key_management, 
+        self._kM = KeyManager(self._project_name, config_file_preference=self.key_management, 
                              provide_key_data=self._key_data)
 
     def _check_create_km(self):
         if self._kM is None:
             # get the key data previously setup
-            self._kM = KeyManager('xApi', config_file_preference=self.key_management)
+            self._kM = KeyManager(self._project_name, config_file_preference=self.key_management)
             self._key_data = self._kM.key_data
     
     def _parse_handle(self):
