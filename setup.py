@@ -2,8 +2,8 @@ from setuptools import setup, find_packages
 
 setup(
     name="lukhed_x",
-    version="0.1.2",
-    description="Custom tweepy wrapper for posting on X. Used by @grindSunday and @popPunkpoets Bots",
+    version="0.2.0",
+    description="Custom tweepy wrapper for the X API v2. Used by @grindSunday and @popPunkpoets Bots",
     long_description=open("README.md").read(),
     long_description_content_type="text/markdown",
     author="lukhed",
@@ -20,5 +20,6 @@ setup(
     install_requires=[
         "lukhed-basic-utils>=1.6.4",
         "tweepy>=4.16.0",
+        "requests-oauthlib>=1.3.1",
     ],
 )
